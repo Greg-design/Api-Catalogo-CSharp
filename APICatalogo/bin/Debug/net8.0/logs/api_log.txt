@@ -1,0 +1,10 @@
+2025-03-13 11:00:02 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-13 11:00:02 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-13 11:00:03 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-13 11:00:03 - Information: 0 - Hosting environment: Development
+2025-03-13 11:00:03 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-13 11:31:56 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-13 11:31:56 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-13 11:31:56 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-13 11:31:56 - Information: 0 - Hosting environment: Development
+2025-03-13 11:31:56 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
