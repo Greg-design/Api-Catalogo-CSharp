@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models
 {
@@ -24,6 +25,7 @@ namespace APICatalogo.Models
         [Url(ErrorMessage = "A URL da imagem deve ser válida")]
         public string ImagemUrl { get; set; }
 
+        [JsonIgnore]
         public ICollection<Produto>? Produtos { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

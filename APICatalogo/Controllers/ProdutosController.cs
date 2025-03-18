@@ -1,7 +1,6 @@
-﻿using APICatalogo.Context;
-using APICatalogo.Models;
+﻿using APICatalogo.Models;
+using APICatalogo.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace APICatalogo.Controllers
 {
@@ -9,78 +8,89 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class ProdutosController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IUnitOfWork _uof;
         private readonly ILogger<ProdutosController> _logger;
 
-        public ProdutosController(AppDbContext context, ILogger<ProdutosController> logger)
+        public ProdutosController(IUnitOfWork uof, ILogger<ProdutosController> logger)
         {
-            _context = context;
+            _uof = uof;
             _logger = logger;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produto>>> Get()
+        [HttpGet("produtos/{id}")]
+        public ActionResult <IEnumerable<Produto>> GetProdutosCategoria(int id)
         {
-            var produtos = await _context.Produtos.ToListAsync();
+            var produtos = _uof.ProdutoRepository.GetProdutosPorCategoria(id);
+
+            if(produtos is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(produtos);
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Produto>> Get()
+        {
+            var produtos = _uof.ProdutoRepository.GetAll();
             if (produtos is null)
             {
                 return NotFound();
             }
-            return produtos;
+            return Ok(produtos);
         }
 
         [HttpGet("{id:int}", Name = "ObterProduto")]
-        public async Task<ActionResult<Produto>> Get(int id)
+        public ActionResult<Produto> Get(int id)
         {
-            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ProdutoId == id);
+            var produto = _uof.ProdutoRepository.Get(p => p.ProdutoId == id);
             if (produto is null)
             {
                 return NotFound("Produto não encontrado...");
             }
-            return produto;
+            return Ok(produto);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(Produto produto)
+        public ActionResult Post(Produto produto)
         {
             if (produto is null)
                 return BadRequest();
 
-            await _context.Produtos.AddAsync(produto);
-            await _context.SaveChangesAsync();
+            var novoProduto = _uof.ProdutoRepository.Create(produto);
+            _uof.Commit();
 
             return new CreatedAtRouteResult("ObterProduto",
-                new { id = produto.ProdutoId }, produto);
+                new { id = novoProduto.ProdutoId }, novoProduto);
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id, Produto produto)
+        public ActionResult Put(int id, Produto produto)
         {
             if (id != produto.ProdutoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(produto).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            var produtoAtualizado = _uof.ProdutoRepository.Update(produto);
+            _uof.Commit();
 
-            return Ok(produto);
+            return Ok(produtoAtualizado);
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> Delete(int id)
+        public ActionResult Delete(int id)
         {
-            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ProdutoId == id);
-            //var produto = _context.Produtos.Find(id);
-
+            var produto = _uof.ProdutoRepository.Get(p => p.ProdutoId == id);
             if (produto is null)
             {
-                return NotFound("Produto não localizado...");
+                return NotFound("Produto não encontrado...");
             }
-            _context.Produtos.Remove(produto);
-            await _context.SaveChangesAsync();
 
-            return Ok(produto);
+            var produtoDeletado = _uof.ProdutoRepository.Delete(produto);
+            _uof.Commit();
+            return Ok(produtoDeletado);
         }
     }
 }

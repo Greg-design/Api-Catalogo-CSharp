@@ -8,3 +8,83 @@
 2025-03-13 11:31:56 - Information: 0 - Application started. Press Ctrl+C to shut down.
 2025-03-13 11:31:56 - Information: 0 - Hosting environment: Development
 2025-03-13 11:31:56 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 10:11:29 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 10:11:29 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 10:11:29 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 10:11:29 - Information: 0 - Hosting environment: Development
+2025-03-17 10:11:29 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 10:12:07 - Information: 0 - ### Executando -> OnActionExecuting
+2025-03-17 10:12:07 - Information: 0 - #####################################################
+2025-03-17 10:12:07 - Information: 0 - 10:12:07
+2025-03-17 10:12:07 - Information: 0 - ModelState: True
+2025-03-17 10:12:07 - Information: 0 - #####################################################
+2025-03-17 10:12:07 - Information: 20101 - Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+2025-03-17 10:12:07 - Information: 0 - ### Executando -> OnActionExecuted
+2025-03-17 10:12:07 - Information: 0 - #####################################################
+2025-03-17 10:12:07 - Information: 0 - 10:12:07
+2025-03-17 10:12:07 - Information: 0 - Status Code: 200
+2025-03-17 10:12:07 - Information: 0 - #####################################################
+2025-03-17 10:15:08 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 10:15:08 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 10:15:09 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 10:15:09 - Information: 0 - Hosting environment: Development
+2025-03-17 10:15:09 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 10:55:57 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 10:55:57 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 10:55:57 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 10:55:57 - Information: 0 - Hosting environment: Development
+2025-03-17 10:55:57 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 10:56:05 - Information: 20101 - Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+2025-03-17 13:31:51 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 13:31:51 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 13:31:51 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 13:31:51 - Information: 0 - Hosting environment: Development
+2025-03-17 13:31:51 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 13:32:12 - Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+2025-03-17 15:28:27 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 15:28:27 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 15:28:28 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 15:28:28 - Information: 0 - Hosting environment: Development
+2025-03-17 15:28:28 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 15:46:31 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-17 15:46:31 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-17 15:46:31 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-17 15:46:31 - Information: 0 - Hosting environment: Development
+2025-03-17 15:46:31 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-17 15:49:34 - Information: 0 - ### Executando -> OnActionExecuting
+2025-03-17 15:49:34 - Information: 0 - #####################################################
+2025-03-17 15:49:35 - Information: 0 - 15:49:35
+2025-03-17 15:49:35 - Information: 0 - ModelState: True
+2025-03-17 15:49:35 - Information: 0 - #####################################################
+2025-03-17 15:49:35 - Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+2025-03-17 15:49:35 - Information: 0 - ### Executando -> OnActionExecuted
+2025-03-17 15:49:35 - Information: 0 - #####################################################
+2025-03-17 15:49:35 - Information: 0 - 15:49:35
+2025-03-17 15:49:35 - Information: 0 - Status Code: 200
+2025-03-17 15:49:35 - Information: 0 - #####################################################
+2025-03-18 09:20:31 - Information: 14 - Now listening on: https://localhost:7200
+2025-03-18 09:20:31 - Information: 14 - Now listening on: http://localhost:5020
+2025-03-18 09:20:31 - Information: 0 - Application started. Press Ctrl+C to shut down.
+2025-03-18 09:20:31 - Information: 0 - Hosting environment: Development
+2025-03-18 09:20:31 - Information: 0 - Content root path: C:\Users\Gregory de Souza\Desktop\projetos\APICatalogo\APICatalogo
+2025-03-18 09:20:38 - Information: 0 - ### Executando -> OnActionExecuting
+2025-03-18 09:20:38 - Information: 0 - #####################################################
+2025-03-18 09:20:38 - Information: 0 - 09:20:38
+2025-03-18 09:20:38 - Information: 0 - ModelState: True
+2025-03-18 09:20:38 - Information: 0 - #####################################################
+2025-03-18 09:20:38 - Information: 20101 - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+2025-03-18 09:20:38 - Information: 0 - ### Executando -> OnActionExecuted
+2025-03-18 09:20:38 - Information: 0 - #####################################################
+2025-03-18 09:20:38 - Information: 0 - 09:20:38
+2025-03-18 09:20:38 - Information: 0 - Status Code: 200
+2025-03-18 09:20:38 - Information: 0 - #####################################################
